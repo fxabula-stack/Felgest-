@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>FELGEST - Serviços Digitais</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Montserrat',sans-serif;
+}
+
+body{
+background:#050505;
+color:white;
+overflow-x:hidden;
+}
+
+/* TOPO */
+
+.top-bar{
+background:#b40000;
+padding:8px 5%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+font-size:14px;
+}
+
+.top-bar span{
+margin-right:15px;
+}
+
+/* MENU */
+
+header{
+background:#000;
+padding:20px 5%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-bottom:1px solid #1f1f1f;
+position:sticky;
+top:0;
+z-index:999;
+}
+
+.logo h1{
+color:#ff0000;
+font-size:34px;
+font-weight:800;
+}
+
+.logo p{
+font-size:12px;
+letter-spacing:2px;
+}
+
+nav{
+display:flex;
+gap:25px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-size:14px;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#ff0000;
+}
+
+.btn-top{
+background:#ff0000;
+padding:14px 22px;
+border-radius:5px;
+text-decoration:none;
+color:white;
+font-weight:600;
+}
+
+/* HERO */
+
+.hero{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:70px 5%;
+background:
+linear-gradient(to right, rgba(0,0,0,0.95), rgba(0,0,0,0.4)),
+url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop');
+background-size:cover;
+background-position:center;
+gap:40px;
+}
+
+.hero-text{
+max-width:600px;
+}
+
+.hero-text h2{
+font-size:75px;
+line-height:1;
+font-weight:800;
+}
+
+.hero-text h2 span{
+color:#ff0000;
+}
+
+.hero-text p{
+margin-top:20px;
+font-size:18px;
+line-height:1.8;
+color:#d8d8d8;
+}
+
+.hero-buttons{
+margin-top:35px;
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:16px 28px;
+border-radius:5px;
+text-decoration:none;
+font-weight:700;
+transition:0.3s;
+}
+
+.red{
+background:#ff0000;
+color:white;
+}
+
+.red:hover{
+background:#cc0000;
+}
+
+.outline{
+border:2px solid white;
+color:white;
+}
+
+.outline:hover{
+background:white;
+color:black;
+}
+
+.hero-image img{
+width:450px;
+max-width:100%;
+border-radius:12px;
+box-shadow:0 0 30px rgba(255,0,0,0.5);
+}
+
+/* SERVIÇOS */
+
+.services{
+padding:80px 5%;
+}
+
+.section-title{
+font-size:42px;
+margin-bottom:50px;
+font-weight:800;
+}
+
+.section-title span{
+color:#ff0000;
+}
+
+.service-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
+
+.card{
+background:#0d0d0d;
+border:1px solid #242424;
+padding:35px;
+border-radius:12px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+border-color:#ff0000;
+}
+
+.card h3{
+margin-top:15px;
+font-size:24px;
+margin-bottom:15px;
+}
+
+.card p{
+color:#cfcfcf;
+line-height:1.8;
+margin-bottom:25px;
+}
+
+.card a{
+display:inline-block;
+background:#ff0000;
+padding:12px 20px;
+border-radius:5px;
+text-decoration:none;
+color:white;
+font-weight:700;
+}
+
+/* SOBRE */
+
+.about{
+padding:80px 5%;
+display:flex;
+gap:50px;
+align-items:center;
+flex-wrap:wrap;
+}
+
+.about-image img{
+width:380px;
+max-width:100%;
+border-radius:14px;
+box-shadow:0 0 25px rgba(255,0,0,0.4);
+}
+
+.about-text{
+flex:1;
+min-width:300px;
+}
+
+.about-text h2{
+font-size:42px;
+margin-bottom:20px;
+}
+
+.about-text h2 span{
+color:#ff0000;
+}
+
+.about-text p{
+line-height:2;
+color:#d3d3d3;
+font-size:17px;
+}
+
+/* CONTACTO */
+
+.contact{
+padding:80px 5%;
+background:#0a0a0a;
+}
+
+.contact-box{
+display:flex;
+gap:40px;
+flex-wrap:wrap;
+}
+
+.contact-info{
+flex:1;
+min-width:280px;
+}
+
+.contact-info h3{
+font-size:35px;
+margin-bottom:20px;
+}
+
+.contact-info p{
+font-size:18px;
+margin-bottom:18px;
+color:#d9d9d9;
+}
+
+.contact-form{
+flex:1;
+min-width:280px;
+}
+
+.contact-form input,
+.contact-form textarea{
+width:100%;
+padding:16px;
+margin-bottom:20px;
+background:#111;
+border:1px solid #2d2d2d;
+color:white;
+border-radius:5px;
+}
+
+.contact-form button{
+width:100%;
+padding:16px;
+background:#ff0000;
+border:none;
+color:white;
+font-size:16px;
+font-weight:700;
+border-radius:5px;
+cursor:pointer;
+}
+
+/* FOOTER */
+
+footer{
+background:#b40000;
+padding:20px;
+text-align:center;
+font-size:14px;
+margin-top:40px;
+}
+
+/* RESPONSIVO */
+
+@media(max-width:900px){
+
+header{
+flex-direction:column;
+gap:20px;
+}
+
+nav{
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.hero{
+flex-direction:column;
+text-align:center;
+}
+
+.hero-text h2{
+font-size:55px;
+}
+
+.hero-buttons{
+justify-content:center;
+}
+
+.about{
+flex-direction:column;
+text-align:center;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="top-bar">
+<div>
+<span>📞 +244 954 075 100</span>
+<span>📞 +244 924 020 683</span>
+</div>
+
+<div>
+<span>Félix Chabula</span>
+</div>
+</div>
+
+<header>
+
+<div class="logo">
+<h1>FELGEST</h1>
+<p>SERVIÇOS DIGITAIS</p>
+</div>
+
+<nav>
+<a href="#">INÍCIO</a>
+<a href="#">SOBRE</a>
+<a href="#">SERVIÇOS</a>
+<a href="#">PORTFÓLIO</a>
+<a href="#">CONTACTOS</a>
+</nav>
+
+<a href="tel:+244954075100" class="btn-top">
+PEDIR ORÇAMENTO
+</a>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-text">
+
+<h2>FEL<span>GEST</span></h2>
+
+<p>
+Promoção de serviços digitais, design gráfico profissional,
+quadros digitais personalizados e cobertura fotográfica
+para eventos, marcas e empresas.
+</p>
+
+<div class="hero-buttons">
+
+<a href="tel:+244954075100" class="btn red">
+PEDIR ORÇAMENTO
+</a>
+
+<a href="tel:+244924020683" class="btn outline">
+LIGAR AGORA
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-image">
+
+<img src="https://i.imgur.com/JV6mG8x.png" alt="Félix">
+
+</div>
+
+</section>
+
+<section class="services">
+
+<h2 class="section-title">
+NOSSOS <span>SERVIÇOS</span>
+</h2>
+
+<div class="service-grid">
+
+<div class="card">
+<h3>DESIGN GRÁFICO</h3>
+
+<p>
+Criação de flyers, banners, logótipos,
+cartões, capas e artes profissionais.
+</p>
+
+<a href="tel:+244954075100">
+PEDIR ORÇAMENTO
+</a>
+</div>
+
+<div class="card">
+<h3>COBERTURA FOTOGRÁFICA</h3>
+
+<p>
+Cobertura profissional para aniversários,
+casamentos, eventos e promoções.
+</p>
+
+<a href="tel:+244924020683">
+PEDIR ORÇAMENTO
+</a>
+</div>
+
+<div class="card">
+<h3>QUADROS DIGITAIS</h3>
+
+<p>
+Quadros personalizados modernos e elegantes
+para decorar e destacar sua marca.
+</p>
+
+<a href="tel:+244954075100">
+PEDIR ORÇAMENTO
+</a>
+</div>
+
+</div>
+
+</section>
+
+<section class="about">
+
+<div class="about-image">
+
+<img src="https://i.imgur.com/JV6mG8x.png" alt="Félix">
+
+</div>
+
+<div class="about-text">
+
+<h2>SOBRE <span>MIM</span></h2>
+
+<p>
+Félix Chabula é Designer Gráfico com foco em
+criar artes modernas, impactantes e profissionais.
+Especialista em identidade visual, flyers,
+banners, quadros digitais e cobertura fotográfica.
+</p>
+
+<br>
+
+<p>
+O objetivo é transformar ideias em artes visuais
+que valorizam marcas, negócios e empresas.
+</p>
+
+</div>
+
+</section>
+
+<section class="contact">
+
+<h2 class="section-title">
+ENTRE EM <span>CONTACTO</span>
+</h2>
+
+<div class="contact-box">
+
+<div class="contact-form">
+
+<input type="text" placeholder="Seu nome">
+
+<input type="text" placeholder="Seu telefone">
+
+<textarea rows="6" placeholder="Digite sua mensagem"></textarea>
+
+<button>
+ENVIAR MENSAGEM
+</button>
+
+</div>
+
+<div class="contact-info">
+
+<h3>CONTACTOS RÁPIDOS</h3>
+
+<p>📞 +244 954 075 100</p>
+
+<p>📞 +244 924 020 683</p>
+
+<p>📘 Félix Chabula</p>
+
+<p>🟢 WhatsApp disponível</p>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 FELGEST - Serviços Digitais Profissionais.
+Todos os direitos reservados.
+
+</footer>
+
+</body>
+</html>
